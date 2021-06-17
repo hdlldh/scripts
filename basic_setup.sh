@@ -1,13 +1,6 @@
 BASH_FILE=~/bashrc
 
 echo '#' >> $BASH_FILE
-echo '# >>> api key configuration >>>' >> $BASH_FILE
-echo "export GOOGLE_API_KEY=AIzaSyByUc2tcNDPS1v9qi_Gj3kFPla8F2wHRtU" >> $BASH_FILE
-echo "export BING_API_KEY=YmJ4a3TrQZ1akyWBke6x~SHqHxdmrej0YJpIEQBKhgQ~AilRd0Romf_7I31ymREIwD-ePPkHJ08PfM7PvNvqSEDpgwx38foVfqCTK70HKvUt" >> $BASH_FILE
-echo '#  <<< api key configuration <<<' >> $BASH_FILE
-echo '#' >> $BASH_FILE
-
-echo '#' >> $BASH_FILE
 echo '# >>> syntax highlighting configuration >>>' >> $BASH_FILE 
 echo "export CLICOLOR=1" >> $BASH_FILE
 echo "export LSCOLORS=GxFxCxDxBxegedabagaced" >> $BASH_FILE
