@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  db:
+    image: postgres
+    container_name: Tahoe
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - db_data:$HOME/docker/postgres/data
+    ports:
+      - "54321:5432"
+
+volumes:
+    db_data:
