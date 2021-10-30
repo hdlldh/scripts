@@ -1,4 +1,4 @@
-ANACONDA_VERSION=2020.02
+ANACONDA_VERSION=2021.05
 BASH_FILE=~/bashrc
 
 source ./my_os.sh
