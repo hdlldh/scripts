@@ -2,6 +2,7 @@ declare -a repos=(\
 	"breeze" \
 	"catboost" \
 	"handson-ml2" \
+        "ml-prod" \
 	"nlp_hugging_face" \
 	"spark" \
 	"spark-nlp" \
