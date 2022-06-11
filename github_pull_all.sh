@@ -1,6 +1,9 @@
 declare -a repos=(\
 	"breeze" \
 	"catboost" \
+        "d2l-java" \
+	"djl" \
+        "djl-demo" \
 	"handson-ml2" \
         "ml-prod" \
 	"nlp_hugging_face" \
