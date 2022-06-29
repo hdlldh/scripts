@@ -12,7 +12,9 @@ declare -a repos=(\
 	"spark-nlp-workshop" \
 	"tensorflow" \
 	"tensorflow_java" \
-	"tf-deploy"\
+	"tf-deploy" \
+        "tokenizers" \
+        "transformers"\
 ) 
 
 for repo in "${repos[@]}"
