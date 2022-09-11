@@ -1,12 +1,13 @@
 function check_os_type()
 {
-    unameOut="$(uname -s)"
+    unameOut="$(uname -a)"
 	case "${unameOut}" in
-    		Linux*)     machine=Linux;;
-    		Darwin*)    machine=Mac;;
-    		CYGWIN*)    machine=Cygwin;;
-    		MINGW*)     machine=MinGw;;
-    		*)          machine="UNKNOWN:${unameOut}"
+    		Linux*)     	machine=Linux;;
+    		Darwin*arm64)   machine=MacM1;;
+                Darwin*x86_64)  machine=MacIntel;;
+    		CYGWIN*)    	machine=Cygwin;;
+    		MINGW*)     	machine=MinGw;;
+    		*)          	machine="UNKNOWN:${unameOut}"
 	esac
 	echo ${machine}
 
