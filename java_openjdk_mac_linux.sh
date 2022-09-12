@@ -6,8 +6,9 @@ BASH_FILE=~/bashrc
 
 source ./my_os.sh
 machine=$(check_os_type)
+is_valid=$(is_valid_os $machine)
 
-if [ "$machine" != "Mac" ] && [ "$machine" != "Linux" ]; then
+if [ "$is_valid" != "yes" ]; then
 	echo "Neither MAC nor Linux system."
         exit
 fi
@@ -19,7 +20,7 @@ fi
 echo '#' >> $BASH_FILE
 echo '# >>> java configuration >>>' >> $BASH_FILE
 
-if [ "$machine" = "Mac" ]; then
+if [ "$machine" = "MacIntel" ]; then
 	INSTALLER=OpenJDK${JAVA_MAJOR_VER}U-jdk_x64_mac_hotspot_${JAVA_MAJOR_VER}u${JAVA_MINOR_VER}b${JAVA_BIN_VER}.tar.gz
 	echo "export JAVA_HOME=${TOOLS_HOME}/${JAVA_FOLDER}/Contents/Home" >> $BASH_FILE
 else

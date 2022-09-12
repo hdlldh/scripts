@@ -3,8 +3,9 @@ BASH_FILE=~/bashrc
 
 source ./my_os.sh
 machine=$(check_os_type)
+is_valid=$(is_valid_os $machine)
 
-if [ "$machine" != "Mac" ] && [ "$machine" != "Linux" ]; then
+if [ "$is_valid" != "yes" ]; then
 	echo "Neither MAC nor Linux system."
         exit
 fi
@@ -13,10 +14,10 @@ if [ -z "$TOOLS_HOME" ]; then
 	TOOLS_HOME=$HOME/Tools
 fi
 
-if [ "$machine" = "Mac" ]; then
-        https://repo.anaconda.com/miniconda/Miniconda3-py38_4.12.0-MacOSX-x86_64.sh
-        https://repo.anaconda.com/miniconda/Miniconda3-py38_4.12.0-MacOSX-arm64.sh
+if [ "$machine" = "MacIntel" ]; then
 	INSTALLER=Miniconda3-${MINICONDA_VERSION}-MacOSX-x86_64.sh
+elif [ "$machine" = "MacM1" ]; then
+        INSTALLER=Miniconda3-${MINICONDA_VERSION}-MacOSX-arm64.sh
 else
 	INSTALLER=Miniconda3-${MINICONDA_VERSION}-Linux-x86_64.sh
 fi
