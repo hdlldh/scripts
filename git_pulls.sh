@@ -13,13 +13,12 @@ declare -a repo_urls=(\
 	"https://github.com/apache/spark.git" \
 	"https://github.com/JohnSnowLabs/spark-nlp.git" \
 	"https://github.com/JohnSnowLabs/spark-nlp-workshop.git" \
-	"https://github.com/tensorflow/docs.git" \
 	"https://github.com/tensorflow/tfx.git" \
 	"https://github.com/tensorflow/serving.git" \
 	"https://github.com/tensorflow/java.git" \
 	"https://github.com/pytorch/pytorch.git" \
 	"https://github.com/pytorch/serve.git" \
-	"https://github.com/pytorch/tutorials.git" \
+	"https://github.com/nlp-with-transformers/notebooks.git" \
 ) 
 
 for url in "${repo_urls[@]}"
@@ -32,6 +31,10 @@ do
 	renamed_repo="tf_$repo"
     elif [ $owner = "pytorch" ]; then
         renamed_repo="pt_$repo"
+    elif [ $owner = "huggingface" ]; then
+        renamed_repo="hf_$repo"
+    elif [ $owner = "nlp-with-transformers" ]; then
+        renamed_repo="transformers_$repo"
     else
 	renamed_repo=$repo
     fi 
@@ -40,8 +43,8 @@ do
         cd "$REPO_PATH/$renamed_repo"
         git pull
     else
-        echo "$REPO_PATH/$repo does not exist."
-        echo "Cloning $repo"
+        echo "$REPO_PATH/$renamed_repo does not exist."
+        echo "Cloning $renamed_repo"
         cd $REPO_PATH
         if [ $repo = $renamed_repo ]; then
         	git clone $url
