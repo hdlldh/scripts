@@ -1,4 +1,4 @@
-ANACONDA_VERSION=2021.05
+ANACONDA_VERSION=2022.05
 BASH_FILE=~/bashrc
 
 source ./my_os.sh
@@ -17,7 +17,7 @@ fi
 if [ "$machine" = "MacIntel" ]; then
 	INSTALLER=Anaconda3-${ANACONDA_VERSION}-MacOSX-x86_64.sh
 elif [ "$machine" = "MacM1" ]; then
-        INSTALLER=Anaconda3-${ANACONDA_VERSION}-Linux-arm64.sh
+        INSTALLER=Anaconda3-${ANACONDA_VERSION}-MacOSX-arm64.sh
 else
 	INSTALLER=Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh
 fi
