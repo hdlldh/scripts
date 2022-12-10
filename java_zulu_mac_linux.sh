@@ -1,6 +1,10 @@
 JAVA_MAJOR_VER=8
 JAVA_VER=jdk8.0.345
 ZULU_VER=zulu8.64.0.19
+
+JAVA_MAJOR_VER=11
+JAVA_VER=jdk11.0.17
+ZULU_VER=zulu11.60.19
 BASH_FILE=~/bashrc
 
 source ./my_os.sh
@@ -33,7 +37,7 @@ else
         echo "export JAVA_HOME=${TOOLS_HOME}/${JAVA_FOLDER}" >> $BASH_FILE
 fi
 
-curl -L -O https://cdn.azul.com/zulu/bin//${INSTALLER}
+curl -L -O https://cdn.azul.com/zulu/bin/${INSTALLER}
 tar -xvzf $INSTALLER
 mv ${JAVA_FOLDER} $TOOLS_HOME
 
